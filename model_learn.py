@@ -567,11 +567,11 @@ class TutorialDisplay(object):
 
             draw_main_images()
             self.msg_frame.draw()
-            hebrew_text = u"השטיחים שלך מוכנים ועומדים להתחיל לזהור. "\
-              u"התכונן לעשות את הבחירה שלך."
+            hebrew_text = u"השטיחים שלכם מוכנים ועומדים להתחיל לזהור. התכוננו לעשות את הבחירה שלכם."
+
 
             # Assign the reversed text to the TextStim object
-            self.msg_text.text = hebrew_text[::-1]  # Reverse for proper RTL rendering
+            self.msg_text.text = hebrew_text[::-1]  # Reverse for propesr RTL rendering
 
             self.msg_text.draw()
             self.win.flip()
@@ -633,8 +633,8 @@ class TutorialDisplay(object):
             self.msg_text.text = hebrew_text[::-1]
         else:
             colors = TutorialConfig.final_state_colors
-            hebrew_text = u"אוי לא! הרוחות ליד הר {} חזקות מדי. "\
-              u"אתה מחליט לנחות עם השטיח שלך על הר {} במקום.".format(
+            hebrew_text = u"אוי לא! הרוחות ליד ההר {} חזקות מדי. "\
+              u"אתה מחליט לנחות עם השטיח שלך על ההר {} במקום.".format(
             color_translations[colors[1 - colors.index(final_state_color)].lower()],
             color_translations[final_state_color.lower()]
             )
@@ -686,7 +686,7 @@ class TutorialDisplay(object):
             core.wait(0.5)
 
             draw_main_images()
-            hebrew_text = u"הנה המנורות שבהן גרים הג'ינים של הר {}.".format(
+            hebrew_text = u"הנה המנורות שבהן גרים הג'ינים של ההר {}.".format(
             color_translations[final_state_color.lower()])
 
             # Reverse the text for proper RTL rendering in PsychoPy
@@ -771,7 +771,7 @@ class TutorialDisplay(object):
             core.wait(0.5)
 
             draw_main_images()
-            hebrew_text = u"המנורות עומדות להתחיל לזהור, התכונן לבצע את הבחירה שלך."
+            hebrew_text = u"המנורות עומדות להתחיל לזהור, התכוננו לבצע את הבחירה שלכם."
 
 
             # Assign the reversed text to `self.msg_text.text` for RTL rendering
@@ -909,7 +909,7 @@ class TutorialDisplay(object):
             if trial < 2:
                 draw_main_images()
                 self.msg_frame.draw()
-                hebrew_text = u"זכור את שמו של הג'יני הזה למקרה שתרצה לבחור שוב את המנורה שלו בעתיד."
+                hebrew_text = u"זכרו את שמו של הג'יני הזה למקרה שתרצו לבחור שוב את המנורה שלו בעתיד."
 
                 # Assign the reversed text to `self.msg_text.text` for RTL rendering
                 self.msg_text.text = hebrew_text[::-1]
