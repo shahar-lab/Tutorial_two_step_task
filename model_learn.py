@@ -326,7 +326,7 @@ def run_trial_sequence(config, display, model, csv_writer):
             display.display_selected_carpet(completed_trials, choice1, isymbols, common_transitions)
 
             # Transition
-            chosen_symbol1 = trial.initial_state.symbols[int(choice1 == 's')]
+            chosen_symbol1 = trial.initial_state.symbols[int(choice1 == 'k')]
             final_state = chosen_symbol1.final_state
             row['choice1'] = code_to_bin(chosen_symbol1.code)
             row['final_state'] = code_to_bin(chosen_symbol1.code, trial.common)
@@ -359,7 +359,7 @@ def run_trial_sequence(config, display, model, csv_writer):
                 display.display_selected_lamp(completed_trials, final_state.color, fsymbols, choice2)
 
                 # Reward
-                chosen_symbol2 = final_state.symbols[int(choice2 == 's')]
+                chosen_symbol2 = final_state.symbols[int(choice2 == 'k')]
                 row['choice2'] = code_to_bin(chosen_symbol2.code)
                 reward = chosen_symbol2.reward
                 row['reward'] = reward
@@ -600,8 +600,8 @@ class TutorialDisplay(object):
             draw_main_images()
             self.msg_frame.draw()
             hebrew_text = u"בחרת בשטיח שב{}, שמכושף לעוף אל ההר {}. טיסה נעימה!".format(
-            u'ימין' if choice1 == 's' else u'שמאל',
-            color_translations[common_transitions[isymbols[int(choice1 == 's')]]['color'].lower()]
+            u'ימין' if choice1 == 'k' else u'שמאל',
+            color_translations[common_transitions[isymbols[int(choice1 == 'k')]]['color'].lower()]
         )
 
             # Assign the reversed text for RTL display
@@ -736,7 +736,7 @@ class TutorialDisplay(object):
 
             draw_main_images()
             hebrew_text = u"בקרוב תוכלו לבחור מנורה ולשפשף אותה על ידי לחיצה "\
-              u"על החץ השמאלי או הימני."
+              u"על המקש השמאלי או הימני."
 
             # Reverse the text for proper RTL rendering in PsychoPy
             self.msg_text.text = hebrew_text[::-1]  # Reverse for RTL display
@@ -803,7 +803,7 @@ class TutorialDisplay(object):
             draw_main_images()
             self.msg_frame.draw()
             hebrew_text = u"אתם מרימים את המנורה שב{} ומשפשפים אותה.".format(
-            u'ימין' if choice2 == 's' else u'שמאל'  # Translate 's' and 'k' dynamically
+            u'ימין' if choice2 == 'k' else u'שמאל'  # Translate 's' and 'k' dynamically
             )
 
             # Assign the reversed text to `self.msg_text.text` for RTL rendering
