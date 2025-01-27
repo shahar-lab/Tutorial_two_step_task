@@ -403,7 +403,7 @@ def get_random_transition_model(config):
     random.shuffle(isymbols)
     random.shuffle(fsymbols)
     random.shuffle(colors)
-    return {isymbols[i]: {'color': colors[i], 'symbols': fsymbols[i]} for i in xrange(2)}
+    return {isymbols[i]: {'color': colors[i], 'symbols': fsymbols[i]} for i in range(2)}
 
 class TutorialDisplay(object):
     def __init__(self, win, images, mountain_sides):
