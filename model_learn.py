@@ -49,6 +49,13 @@ color_translations = {
     'pink': u'הורוד',
     'blue': u'הכחול'
 }
+
+def check_exit():
+    """Exit the program if Escape is pressed."""
+    if 'escape' in event.getKeys():
+        core.quit()
+
+
 # Configuration for tutorial and game
 class TutorialConfig:
     final_state_colors = ('red', 'black')
@@ -296,7 +303,7 @@ def run_trial_sequence(config, display, model, csv_writer):
         row['isymbol_rgt'] = code_to_bin(trial.initial_state.symbols[1].code)
 
         display.display_start_of_trial(trial.number)
-
+        check_exit()
         # First-stage choice
         isymbols = [symbol.code for symbol in trial.initial_state.symbols]
         display.display_carpets(completed_trials, isymbols, common_transitions)
@@ -304,7 +311,7 @@ def run_trial_sequence(config, display, model, csv_writer):
         event.clearEvents()
         keys_times = event.waitKeys(
             maxWait=8, keyList=('s', 'k'), timeStamped=core.Clock())
-
+        check_exit()
         if keys_times is None:
             slow_trials += 1
             display.display_slow1()
@@ -343,6 +350,7 @@ def run_trial_sequence(config, display, model, csv_writer):
             event.clearEvents()
             keys_times = event.waitKeys(
                 maxWait=8, keyList=('s', 'k'), timeStamped=core.Clock())
+            check_exit()
             if keys_times is None:
                 slow_trials += 1
                 display.display_slow2(final_state.color)
