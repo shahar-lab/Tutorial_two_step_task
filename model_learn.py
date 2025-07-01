@@ -550,7 +550,7 @@ class TutorialDisplay(object):
 
             draw_main_images()
             self.msg_frame.draw()
-            hebrew_text = u"כשהשטיחים מתחילים לזהור, יש לך 2 שניות ללחוץ על מקש, "\
+            hebrew_text = u"כשהשטיחים מתחילים לזהור, יש לך 8 שניות ללחוץ על מקש, "\
               u"או שהם יעופו בלעדיך."
             self.msg_text.text = hebrew_text[::-1]  # Reverse for proper RTL rendering
             self.msg_text.draw()
@@ -751,7 +751,7 @@ class TutorialDisplay(object):
             core.wait(0.5)
 
             draw_main_images()
-            hebrew_text = u"כשהמנורות מתחילות לזהור, יש לך 2 שניות ללחוץ על מקש, "\
+            hebrew_text = u"כשהמנורות מתחילות לזהור, יש לך 8 שניות ללחוץ על מקש, "\
               u"אחרת הג'ינים יחזרו לישון."
 
             # Reverse the text for proper RTL rendering in PsychoPy
